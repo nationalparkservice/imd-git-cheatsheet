@@ -47,3 +47,6 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# Rtudio setup html files
+git_rstudio_setup_files/
