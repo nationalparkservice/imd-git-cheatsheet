@@ -1,0 +1,53 @@
+# Setting up Rstudio to talk with git
+
+## 1. Make sure you have all the software and accounts you will need:
+
+-   Download Git from the Software Center
+-   Download R from the software Center
+-   Download Rstudio from the software Center
+-   Register an account at github.com
+
+## 2. Configure git
+
+You really should only have to do this once! From within Rstudio, access the "Terminal" pain and run the following code:
+
+```         
+git config --global user.name ‘your_github_username’
+git config --global user.email ‘email_assoc_with_your_github_account'
+git config --global --list
+git config --global init.defaultBranch main
+```
+
+## 3. Configure Git with Rstudio
+
+If you get API rate limit errors or your PAT expires, you may need to generate a new one. You may end up doing this multiple times but can generally skip it unless you run into errors or need to reset your credentials:
+
+From with Rstudio's "Console" pane, run the following code:
+
+If you don't already have it, install usethis and credentials for R:
+
+```         
+install.packages(c("usethis", "credentials")
+```
+
+create a personal access token for authentication:
+
+```{r, create_PAT, eval=FALSE}
+usethis::create_github_token()
+```
+
+running create_github_token() should open up a web browser and go to github.com. You may be asked to verify your account, enter a password, or otherwise link to the github ecosystem. Check for pop-ups on your second-monitor, if you have one!
+
+From github.com, enter a description for your Personal Access Token (PAT) and select any options you might want; typically the default options work well for everything.
+
+Don't forget to copy the PAT to your clipboard - you'll need it for the next step.
+
+From within R, set your personal access token:
+
+```         
+credentials::set_github_pat("YourPAT")
+```
+
+# 4. Restart R!
+
+You should be all set!
