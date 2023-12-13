@@ -27,20 +27,38 @@ git remote add origin https://github.com/OWNER/REPOSITORY.git
 You only need to do this once for each RStudio project.
 
 Create an initial commit in your local repository:
+
 ```
 git add *
 git commit -m "Initial commit"
 ```
+
 Push your initial commit to GitHub:
+
 ```
 git push --set-upstream origin main
 ```
+
 From now on, in your main branch you can just type `git push` and Git will know to push to the `main` branch on GitHub. You can also use the green/blue push/pull arrows in the **Git** tab in RStudio.
 
-# Workflow & repo settings
+# Workflow & best practices
 
 ## Repo owners/admins
 
  - Prevent pushes directly to main branch
  - Require code reviews
+ 
+## Owners, admins, and frequent contributors
+
+ - Work from a branch called [your initials]-dev (e.g. sew-dev)
+ - Push your dev branch to GitHub frequently
+ - When the main branch gets updated, merge it into your dev branch
+ - When you are done making changes to your dev branch:
+  - Merge the main branch into your branch
+  - Test that everything still works
+    - Run unit tests if applicable
+    - For packages: Rebuild roxygen documentation
+    - For packages: In the **Build** tab, click the **Check** button and ensure there are no errors
+  - Push to GitHub and create a pull request
+  - The repo owner will review and merge your dev branch, or request changes
  
