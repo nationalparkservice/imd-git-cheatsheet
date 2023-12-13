@@ -1,3 +1,9 @@
+---
+title: "Setting up Git, GitHub, and Rstudio - Cheatsheet"
+author: "Sarah Wright and Rob Baker"
+---
+
+
 # Setting up Rstudio to talk with git
 
 ## 1. Make sure you have all the software and accounts you will need:
@@ -7,13 +13,13 @@
 -   Download Rstudio from the software Center
 -   Register an account at github.com
 
-## 2. Configure git
+## 2. Configure Git
 
 You really should only have to do this once! From within Rstudio, access the "Terminal" pain and run the following code:
 
-```         
-git config --global user.name ‘your_github_username’
-git config --global user.email ‘email_assoc_with_your_github_account'
+```{bash, eval=FALSE}         
+git config --global user.name 'your_github_username'
+git config --global user.email 'email_assoc_with_your_github_account'
 git config --global --list
 git config --global init.defaultBranch main
 ```
@@ -26,7 +32,7 @@ From with Rstudio's "Console" pane, run the following code:
 
 If you don't already have it, install usethis and credentials for R:
 
-```         
+```{r, install_packages, eval=FALSE}         
 install.packages(c("usethis", "credentials")
 ```
 
@@ -44,7 +50,7 @@ Don't forget to copy the PAT to your clipboard - you'll need it for the next ste
 
 From within R, set your personal access token:
 
-```         
+```{r, set_pat, eval=FALSE} 
 credentials::set_github_pat("YourPAT")
 ```
 
