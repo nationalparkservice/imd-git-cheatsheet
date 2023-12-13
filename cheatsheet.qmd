@@ -1,0 +1,46 @@
+---
+title: "Version Control in RStudio - Cheatsheet"
+author: "Sarah Wright & Rob Baker"
+format: html
+---
+
+# Getting Started
+
+## I made a GitHub repository and I want to create an RStudio project from it
+
+This is the easiest way to set things up when you are beginning a new project.
+
+Go to **File > New Project > Version Control > Git**.
+
+Paste in the URL to your GitHub repository. The directory name should fill in automatically with your repo name. Click **Create Project**. Your RStudio project will open with the contents of your `main` branch and will already be set up to push and pull from the GitHub repository.
+
+## I made an RStudio project and I want to connect it to a GitHub repository
+
+Create a new repository in GitHub. If you already have a `README` and/or `.gitignore` file in your RStudio project, it's best not to let GitHub create those files.
+
+Click on the **Terminal** tab in RStudio. Run `git status` to verify that you have a local repository. If you see an error message, you need to create a new repository by running `git init` at the command line.
+
+To connect your local Git repository to your new GitHub repository, type the following at the **Terminal** (replacing the URL below with the URL to your repository):
+```
+git remote add origin https://github.com/OWNER/REPOSITORY.git
+```
+You only need to do this once for each RStudio project.
+
+Create an initial commit in your local repository:
+```
+git add *
+git commit -m "Initial commit"
+```
+Push your initial commit to GitHub:
+```
+git push --set-upstream origin main
+```
+From now on, in your main branch you can just type `git push` and Git will know to push to the `main` branch on GitHub. You can also use the green/blue push/pull arrows in the **Git** tab in RStudio.
+
+# Workflow & repo settings
+
+## Repo owners/admins
+
+ - Prevent pushes directly to main branch
+ - Require code reviews
+ 
