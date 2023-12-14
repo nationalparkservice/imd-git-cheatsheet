@@ -6,7 +6,7 @@ author: "Sarah Wright and Rob Baker"
 
 # Setting up Rstudio to talk with git
 
-## 1. Make sure you have all the software and accounts you will need:
+## 1. Make sure you have all the software and accounts you will need
 
 -   Download Git from the Software Center
 -   Download R from the software Center
@@ -54,6 +54,21 @@ From within R, set your personal access token:
 credentials::set_github_pat("YourPAT")
 ```
 
-# 4. Restart R!
+# 4. Restart R
 
 You should be all set!
+
+# References, Acknowledgements, Resources
+
+A very helpful github gist:
+https://gist.github.com/Z3tt/3dab3535007acf108391649766409421
+
+Stack overflow solutions:
+https://stackoverflow.com/questions/69305874/authenticating-to-github-from-rstudio
+
+
+Happy Git with R (very comprehensive):
+https://happygitwithr.com/
+
+GitHub PAT documentation:
+https://docs.github.com/en/rest/orgs/personal-access-tokens?apiVersion=2022-11-28
