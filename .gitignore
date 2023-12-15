@@ -50,3 +50,6 @@ rsconnect/
 
 # Rtudio setup html files
 git_rstudio_setup_files/
+
+#trash file for testing out code snippets
+testing.R
