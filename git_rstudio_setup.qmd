@@ -33,7 +33,7 @@ From with Rstudio's "Console" pane, run the following code:
 If you don't already have it, install usethis and credentials for R:
 
 ```{r, install_packages, eval=FALSE}         
-install.packages(c("usethis", "credentials")
+install.packages(c("usethis", "credentials"))
 ```
 
 create a personal access token for authentication:
@@ -53,6 +53,8 @@ From within R, set your personal access token:
 ```{r, set_pat, eval=FALSE} 
 credentials::set_github_pat("YourPAT")
 ```
+This should also give you a browser window; authorize the git ecosystem as requested.
+
 
 # 4. Restart R
 
